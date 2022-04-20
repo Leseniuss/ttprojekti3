@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Jyri Leskinen/AndroidStudioProjects/ttprojekti3/app/src/main/res/layout/activity_main.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/Jyri Leskinen/AndroidStudioProjects/ttprojekti3/app/src/main/res/layout/activity_storage.xml" value="0.23796296296296296" />
         <entry key="..\:/Users/Jyri Leskinen/AndroidStudioProjects/ttprojekti3/app/src/main/res/layout/fragment_camera_x.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/Jyri Leskinen/AndroidStudioProjects/ttprojekti3/app/src/main/res/layout/fragment_fragment1.xml" value="0.31302083333333336" />
         <entry key="..\:/Users/Jyri Leskinen/AndroidStudioProjects/ttprojekti3/app/src/main/res/layout/fragment_fragment2.xml" value="0.31302083333333336" />
         <entry key="..\:/Users/Jyri Leskinen/AndroidStudioProjects/ttprojekti3/app/src/main/res/layout/fragment_fragment3.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/Jyri Leskinen/AndroidStudioProjects/ttprojekti3/app/src/main/res/layout/fragment_imageadd.xml" value="0.23796296296296296" />
       </map>
     </option>
   </component>

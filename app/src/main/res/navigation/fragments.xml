@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_fragment2_to_cameraXFragment"
             app:destination="@id/cameraXFragment" />
+        <action
+            android:id="@+id/action_fragment2_to_storageActivity"
+            app:destination="@id/storageActivity" />
     </fragment>
     <fragment
         android:id="@+id/fragment3"
@@ -49,4 +52,9 @@
         android:name="com.example.ttprojekti3.CameraXFragment"
         android:label="fragment_camera_x"
         tools:layout="@layout/fragment_camera_x" />
+    <activity
+        android:id="@+id/storageActivity"
+        android:name="com.example.ttprojekti3.StorageActivity"
+        android:label="activity_storage"
+        tools:layout="@layout/activity_storage" />
 </navigation>

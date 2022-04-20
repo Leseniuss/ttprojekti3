@@ -45,7 +45,7 @@ class CameraXFragment : Fragment() {
     // private var imageAnalyzer: ImageAnalysis? = null
     // private var imageAnalyzer2: ImageAnalysis? = null
     // private var camera: Camera? = null
-    //private val lumaperkele = LumaListener2 = (luma2: Double) -> Unit
+
 
 
 
@@ -300,7 +300,7 @@ class CameraXFragment : Fragment() {
             put(MediaStore.MediaColumns.DISPLAY_NAME, name)
             put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
             if(Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
-                put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/ttprojekti2-Image")
+                put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/ttprojekti3-Image")
             }
         }
 

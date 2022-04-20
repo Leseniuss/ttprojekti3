@@ -25,7 +25,7 @@ class fragment2 : Fragment() {
 
         val button2=view.findViewById<Button>(R.id.frag23)
         button2.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_fragment2_to_fragment3)
+            Navigation.findNavController(view).navigate(R.id.action_fragment2_to_storageActivity)
         }
 
         val button3=view.findViewById<Button>(R.id.camera)
