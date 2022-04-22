@@ -131,52 +131,6 @@ class CameraXFragment : Fragment() {
 
 
     private fun startCamera() {
-        /* // OpenCVLoader.initDebug()
-          val cameraProviderFuture = ProcessCameraProvider.getInstance(safeContext)
-
-          cameraProviderFuture.addListener({
-              // Used to bind the lifecycle of cameras to the lifecycle owner
-              val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
-
-
-              preview = Preview.Builder().build()
-
-              imageCapture = ImageCapture.Builder().build()
-
-              imageAnalyzer = ImageAnalysis.Builder().build().apply {
-                  setAnalyzer(Executors.newSingleThreadExecutor(), CornerAnalyzer {
-                      val bitmap = viewFinder.bitmap
-                      val img = Mat()
-                      Utils.bitmapToMat(bitmap, img)
-                      bitmap?.recycle()
-
-                     // val corner = processPicture(img)
-                      // Do image analysis here if you need bitmap
-                  })
-              }
-              // Select back camera
-              val cameraSelector =
-                  CameraSelector.Builder().requireLensFacing(CameraSelector.LENS_FACING_BACK).build()
-
-              try {
-                  // Unbind use cases before rebinding
-                  cameraProvider.unbindAll()
-
-                  // Bind use cases to camera
-                  camera = cameraProvider.bindToLifecycle(
-                      this,
-                      cameraSelector,
-                     // imageAnalyzer,
-                      preview,
-                      imageCapture
-                  )
-
-                  preview?.setSurfaceProvider(viewFinder.surfaceProvider)
-              } catch (exc: Exception) {
-                  Log.e(TAG, "Use case binding failed", exc)
-              }
-
-          }, ContextCompat.getMainExecutor(safeContext)) */
 
         val cameraProviderFuture = ProcessCameraProvider.getInstance(safeContext)
 
@@ -198,11 +152,11 @@ class CameraXFragment : Fragment() {
                 .build()
                 .also {
                     it.setAnalyzer(cameraExecutor, LuminosityAnalyzer { luma ->
-                       // val lumatag: Double = luma
+                        val lumatag: Double = luma
                         Log.i(TAG, "Average luminosity: $luma")
                        // Log.d("PERKELE","Average luminosityyyyyyy: $lumaperkele")
 
-                       // if (lumatag < 100) { takePhoto() }
+                        if (lumatag < 100 || lumatag > 110 ) { takePhoto() }
                     })
                 }/*.also {
                     it.setAnalyzer(cameraExecutor,LuminosityAnalyzer2 { luma ->
@@ -250,43 +204,14 @@ class CameraXFragment : Fragment() {
 
 
     private fun takePhoto() {
-        /*  // Get a stable reference of the modifiable image capture use case
-          val imageCapture = imageCapture ?: return
-
-          // Create timestamped output file to hold the image
-          val photoFile = File(
-              outputDirectory,
-              SimpleDateFormat(FILENAME_FORMAT, Locale.US).format(System.currentTimeMillis()) + ".jpg"
-          )
-
-          // Create output options object which contains file + metadata
-          val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
-
-          // Setup image capture listener which is triggered after photo has
-          // been taken
-          imageCapture.takePicture(
-              outputOptions,
-              ContextCompat.getMainExecutor(safeContext),
-              object : ImageCapture.OnImageSavedCallback {
-                  override fun onError(exc: ImageCaptureException) {
-                      Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
-                  }
-
-                  override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-                      val savedUri = Uri.fromFile(photoFile)
-                      val msg = "Photo capture succeeded: $savedUri"
-                      Toast.makeText(safeContext, msg, Toast.LENGTH_SHORT).show()
-                      Log.d(TAG, msg)
-                  }
-              }) */
 
         // Get a stable reference of the modifiable image capture use case
 
-        val lumaperkele = LuminosityAnalyzer2 { luma ->
+       /* val lumaperkele = LuminosityAnalyzer2 { luma ->
             Log.d("PERKELE","Average luminosityyyyyyy: $luma")
             Log.i(TAG, "Average luminosity: $luma")
 
-        }
+        } */
 
         val contentResolver: ContentResolver = requireActivity().contentResolver
 

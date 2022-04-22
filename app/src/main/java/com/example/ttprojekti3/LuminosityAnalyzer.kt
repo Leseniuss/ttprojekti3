@@ -21,7 +21,7 @@ class LuminosityAnalyzer(private val listener: LumaListener) : ImageAnalysis.Ana
 
     override fun analyze(image: ImageProxy) {
         val currentTimeStamp = System.currentTimeMillis()
-        val intervalInMilliSeconds = TimeUnit.MILLISECONDS.toMillis(1000)
+        val intervalInMilliSeconds = TimeUnit.MILLISECONDS.toMillis(5000)
         deltaTime = currentTimeStamp - lastTimeStamp
 
         if (deltaTime >= intervalInMilliSeconds) {

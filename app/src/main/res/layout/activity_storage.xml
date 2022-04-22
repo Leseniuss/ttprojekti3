@@ -1,41 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingHorizontal="16dp"
-    tools:context=".Imageadd">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Image Add"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+    android:padding="16dp"
+    tools:context=".StorageActivity">
 
     <ImageView
         android:id="@+id/firebaseImage"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginBottom="30dp"
-        android:scaleType="centerCrop" />
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:background="#B1B1B1"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadImagebtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDeleteImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="EI KÄYTÖSSÄ/DELETE"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/firebaseImage"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/selectImagebtn"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginBottom="32dp"
-        android:text="Select image"/>
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Valitse kuva"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/firebaseImage"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeleteImage" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
         android:id="@+id/uploadImagebtn"
-        android:text="Upload image"/>
-</LinearLayout>
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lisää kuva firebaseen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/firebaseImage"
+        app:layout_constraintTop_toBottomOf="@+id/selectImagebtn" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvImages"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firebaseImage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
