@@ -154,17 +154,11 @@ class CameraXFragment : Fragment() {
                     it.setAnalyzer(cameraExecutor, LuminosityAnalyzer { luma ->
                         val lumatag: Double = luma
                         Log.i(TAG, "Average luminosity: $luma")
-                       // Log.d("PERKELE","Average luminosityyyyyyy: $lumaperkele")
+                       // Log.d("PEeeeeeee","Average luminosityyyyyyy: $lumaperkele")
 
                         if (lumatag < 100 || lumatag > 110 ) { takePhoto() }
                     })
-                }/*.also {
-                    it.setAnalyzer(cameraExecutor,LuminosityAnalyzer2 { luma ->
-                        Log.d("PERKELE","Average luminosityyyyyyy: $luma")
-                        Log.i(TAG, "Average luminosity: $luma")
-
-                    })
-                } */
+                }
 
 
 
@@ -172,7 +166,7 @@ class CameraXFragment : Fragment() {
                 .build()
                 .also {
                     it.setAnalyzer(cameraExecutor, LuminosityAnalyzer2 { luma2 ->
-                        Log.d("Perkele22222", "Average luminosity: $luma2")
+                        Log.d("22222", "Average luminosity: $luma2")
                         //  val lumaperkele = luma
                     })
                 } */
@@ -208,7 +202,7 @@ class CameraXFragment : Fragment() {
         // Get a stable reference of the modifiable image capture use case
 
        /* val lumaperkele = LuminosityAnalyzer2 { luma ->
-            Log.d("PERKELE","Average luminosityyyyyyy: $luma")
+            Log.d("photo2222","Average luminosityyyyyyy: $luma")
             Log.i(TAG, "Average luminosity: $luma")
 
         } */
@@ -323,7 +317,7 @@ class CameraXFragment : Fragment() {
             if (!isOffline) {
                 listener()
             }
-            imageProxy.close() // important! if it is not closed it will only run once
+            imageProxy.close()
         }
 
     }

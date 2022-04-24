@@ -64,6 +64,7 @@ class StorageActivity : AppCompatActivity() {
                 rvImages.apply {
                     adapter = imageAdapter
                     layoutManager = LinearLayoutManager(this@StorageActivity)
+
                 }
             }
         } catch(e: Exception) {
