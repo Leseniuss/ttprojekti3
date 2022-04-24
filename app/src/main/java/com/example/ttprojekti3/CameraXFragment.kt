@@ -46,8 +46,7 @@ class CameraXFragment : Fragment() {
     // private var imageAnalyzer2: ImageAnalysis? = null
     // private var camera: Camera? = null
 
-
-
+    // AZUREEN TESTI RIVI
 
 
     private lateinit var safeContext: Context
