@@ -25,6 +25,8 @@ private const val REQUEST_CODE_IMAGE_PICK = 0
 
 class StorageActivity : AppCompatActivity() {
 
+    //test commit
+
     lateinit var binding : ActivityStorageBinding
     lateinit var ImageUri : Uri
 
